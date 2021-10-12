@@ -45,26 +45,29 @@ if($_POST["customerName"] == "") {
 
 
 $pasEncrypt = password_hash($custommerPas, PASSWORD_DEFAULT);
-
-
- $sql = "CALL AddNewUser('$custommerName', '$pasEncrypt')";
-
- $sql2 = "SELECT * FROM loginData";
+$sql = "CALL AddNewUser('$custommerName', '$pasEncrypt')";
+$sql2 = "SELECT * FROM loginData";
 $result = $mySQL-> query($sql2);
 
 while($row = $result->fetch_object() ){
   if($custommerName == $row->userName){
-    echo "User already exists";
+      header("location: logged.php");
+      exit;
+  }
+  else {
+    if($mySQL->query($sql) === TRUE) {
+      header("location: index.php?signup=success");
+      exit;
+    }
   }
 }
 
-if($mySQL->query($sql) === TRUE) {
-  header("location: index.php?signup=success");
-  exit;
-} else {
-  header("location: index.php?signup=failed");
-  exit;
-}
+
+
+
+
+
+
 
 
 

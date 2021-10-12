@@ -77,6 +77,7 @@ $result2 =  $mySQL-> query($sql3);
                         echo "Please, fill it out";
                     }
                  }
+                 
           ?>
      </table>
 </body>
