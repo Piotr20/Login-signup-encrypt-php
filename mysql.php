@@ -1,11 +1,11 @@
 <?php 
 
-$server = "localhost";
+$serwer = "localhost";
 $username = "root";
-$password = "Alva281207_";
-$database = "dating_website";
+$password = "PIOtrek00";
+$database = "workshop_db";
 
-$mySQL = new mysqli($server, $username, $password, $database);
+$mySQL = new mysqli($serwer, $username, $password, $database);
 
 if(!$mySQL){
      die("Could not connect to the MySQL server: " . mysqli_connect_error());
