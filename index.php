@@ -1,6 +1,6 @@
 <?php
 include('mysql.php');
-$sql2 = "SELECT * FROM customers ORDER BY signed DESC";
+$sql2 = "SELECT * FROM loginData";
 $result = $mySQL-> query($sql2);
 
 
@@ -59,7 +59,6 @@ $result = $mySQL-> query($sql2);
                     echo "<tr>";
                     echo "<td>" .  $row->userName . "</td>";
                     echo "<td>" .  $row->userPas . "</td>";
-                    echo "<td>" .  $row->signed. "</td>";
                     echo "</tr>";
                     $i++;
                     if($i>=10){
