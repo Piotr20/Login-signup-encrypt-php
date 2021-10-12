@@ -2,6 +2,8 @@
 include('mysql.php');
 $sql2 = "SELECT * FROM loginData";
 $result = $mySQL-> query($sql2);
+$sql3 = "SELECT * FROM customers";
+$result2 =  $mySQL-> query($sql3);
 
 
 
@@ -56,9 +58,12 @@ $result = $mySQL-> query($sql2);
           <?php 
           $i = 0;
                while($row = $result->fetch_object() ){
+                    $row2 = $result2->fetch_object();
                     echo "<tr>";
                     echo "<td>" .  $row->userName . "</td>";
                     echo "<td>" .  $row->userPas . "</td>";
+                    echo "<td>" .  $row2->signed . "</td>";
+
                     echo "</tr>";
                     $i++;
                     if($i>=10){
